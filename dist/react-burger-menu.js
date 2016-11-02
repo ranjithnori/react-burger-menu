@@ -133,7 +133,8 @@ var CrossIcon = (0, _radium2['default'])(_react2['default'].createClass({
                 position: 'absolute',
                 width: 3,
                 height: 14,
-                transform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)'
+                transform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)',
+                MozTransform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)'
             };
         },
         getDefaultProps: function getDefaultProps() {
@@ -221,8 +222,11 @@ var styles = {
                 height: '100%',
                 background: 'rgba(0, 0, 0, 0.3)',
                 opacity: isOpen ? 1 : 0,
-                transform: isOpen ? '' : 'translate3d(100%, 0, 0)',
-                transition: isOpen ? 'opacity 0.3s' : 'opacity 0.3s, transform 0s 0.3s'
+                transform: isOpen ? '' : 'translate2d(100%, 0, 0)',
+                MozTransform: isOpen ? '' : 'translate2d(100%, 0, 0)',
+                transition: isOpen ? 'opacity 0.3s' : 'opacity 0.3s, transform 0s 0.3s',
+                display: isOpen ? 'block' : 'none',
+                MozTransition: isOpen ? 'opacity 0.3s' : 'opacity 0.3s, transform 0s 0.3s'
             };
         },
         menuWrap: function menuWrap(isOpen, width, right) {
@@ -232,8 +236,10 @@ var styles = {
                 zIndex: 2,
                 width: width,
                 height: '100%',
-                transform: isOpen ? '' : right ? 'translate3d(100%, 0, 0)' : 'translate3d(-100%, 0, 0)',
-                transition: 'all 0.5s'
+                transform: isOpen ? '' : right ? 'translate(100%, 0)' : 'translate(-100%, 0)',
+                MozTransform: isOpen ? '' : right ? 'translate(100%, 0)' : 'translate(-100%, 0)',
+                transition: 'all 0.5s',
+                MozTransition: 'all 0.5s'
             };
         },
         menu: function menu() {

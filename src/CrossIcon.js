@@ -15,7 +15,8 @@ const CrossIcon = Radium(React.createClass({
       position: 'absolute',
       width: 3,
       height: 14,
-      transform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)'
+      transform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)',
+      MozTransform: type === 'before' ? 'rotate(45deg)' : 'rotate(-45deg)'
     };
   },
 
